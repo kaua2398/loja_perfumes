@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - A Essência da Elegância</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Estilos personalizados para fontes */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display font-bold text-stone-900">Aura</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-stone-600 hover:text-stone-900 transition duration-300">Início</a>
+                <a href="perfume.html" class="text-stone-600 hover:text-stone-900 transition duration-300">Perfumes</a>
+                <a href="#sobre" class="text-stone-600 hover:text-stone-900 transition duration-300">Sobre Nós</a>
+                <a href="#contato" class="text-stone-600 hover:text-stone-900 transition duration-300">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="text-stone-600 hover:text-stone-900">
+                    <i data-feather="search"></i>
+                </button>
+                <a href="favoritos.html" class="text-stone-600 hover:text-rose-500 relative"
+                    aria-label="Ir para favoritos">
+                    <i data-feather="heart"></i>
+                    <span id="fav-badge"
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden"></span>
+                </a>
+                <a href="carrinho.html" class="text-stone-600 hover:text-stone-900 relative"
+                    aria-label="Ir para o carrinho">
+                    <i data-feather="shopping-bag"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+                <button class="md:hidden text-stone-600 hover:text-stone-900" id="menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#home" class="block py-2 text-stone-600 hover:text-stone-900">Início</a>
+            <a href="perfume.html" class="block py-2 text-stone-600 hover:text-stone-900">Perfumes</a>
+            <a href="#sobre" class="block py-2 text-stone-600 hover:text-stone-900">Sobre Nós</a>
+            <a href="#contato" class="block py-2 text-stone-600 hover:text-stone-900">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Secção Hero com Carrossel -->
+        <section id="home" class="relative h-[85vh] min-h-[500px] w-full overflow-hidden">
+            <!-- Container dos Slides que irá deslizar -->
+            <div id="carousel-container" class="h-full w-full flex transition-transform duration-700 ease-in-out">
+                <!-- Slide 1 -->
+                <div class="carousel-item h-full w-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1594035919434-2724776a8d8c?q=80&w=2070&auto=format&fit=crop');">
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div
+                        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+                        <h1 class="text-5xl md:text-7xl font-display leading-tight mb-4">Descubra a Sua Essência</h1>
+                        <p class="text-lg md:text-xl max-w-2xl mb-8 font-light">Fragrâncias exclusivas que contam a sua
+                            história. Feitas para momentos inesquecíveis.</p>
+                        <a href="perfume.html"
+                            class="bg-white text-stone-900 font-bold py-3 px-8 rounded-md hover:bg-stone-200 transition duration-300 transform hover:scale-105">VER
+                            COLEÇÃO</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item h-full w-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1585399001342-03c9ab7ec34b?q=80&w=2070&auto=format&fit=crop');">
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div
+                        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+                        <h1 class="text-5xl md:text-7xl font-display leading-tight mb-4">Elegância em Cada Gota</h1>
+                        <p class="text-lg md:text-xl max-w-2xl mb-8 font-light">Composições únicas para realçar a sua
+                            personalidade com sofisticação.</p>
+                        <a href="#produtos"
+                            class="bg-white text-stone-900 font-bold py-3 px-8 rounded-md hover:bg-stone-200 transition duration-300 transform hover:scale-105">EXPLORAR
+                            FRAGRÂNCIAS</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item h-full w-full flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1974&auto=format&fit=crop');">
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <div
+                        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+                        <h1 class="text-5xl md:text-7xl font-display leading-tight mb-4">A Arte da Sedução</h1>
+                        <p class="text-lg md:text-xl max-w-2xl mb-8 font-light">Aromas envolventes que despertam os
+                            sentidos e marcam presença.</p>
+                        <a href="#produtos"
+                            class="bg-white text-stone-900 font-bold py-3 px-8 rounded-md hover:bg-stone-200 transition duration-300 transform hover:scale-105">DESCOBRIR
+                            AROMAS</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Indicadores do Carrossel -->
+            <div class="absolute z-30 bottom-8 left-1/2 -translate-x-1/2 flex space-x-3" id="carousel-indicators">
+                <!-- Os indicadores serão gerados por JS -->
+            </div>
+        </section>
+
+        <!-- Secção de Categorias/Benefícios -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-rose-100 p-4 rounded-full mb-4">
+                            <i data-feather="award" class="text-rose-500 h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Qualidade Premium</h3>
+                        <p class="text-stone-600">Ingredientes selecionados para uma fixação e projeção impecáveis.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-rose-100 p-4 rounded-full mb-4">
+                            <i data-feather="leaf" class="text-rose-500 h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Origens Naturais</h3>
+                        <p class="text-stone-600">Essências extraídas de forma sustentável, respeitando a natureza.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-rose-100 p-4 rounded-full mb-4">
+                            <i data-feather="box" class="text-rose-500 h-8 w-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Entrega Rápida</h3>
+                        <p class="text-stone-600">Receba a sua fragrância preferida em casa com toda a comodidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Produtos em Destaque -->
+        <section id="produtos" class="py-20 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-display text-center mb-4">Fragrâncias em Destaque</h2>
+                <p class="text-center text-stone-600 max-w-xl mx-auto mb-12">Uma seleção dos nossos perfumes mais
+                    amados, perfeitos para qualquer ocasião.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <a href="lumiere.html" class="bg-white rounded-lg shadow-md overflow-hidden group block">
+                        <img src="imagme/lumiere.png" alt="Perfume Lumière"
+                            class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </a>
+                    <a href="noir.html" class="bg-white rounded-lg shadow-md overflow-hidden group block">
+                        <img src="imagme/noir.png" alt="Perfume Noir"
+                            class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </a>
+                    <a href="fleur.html" class="bg-white rounded-lg shadow-md overflow-hidden group block">
+                        <img src="imagme/fleur.png" alt="Perfume Fleur"
+                            class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </a>
+                    <a href="ocean.html" class="bg-white rounded-lg shadow-md overflow-hidden group block">
+                        <img src="imagme/ocean.png" alt="Perfume Océan"
+                            class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500 cursor-pointer">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção Sobre -->
+        <section id="sobre" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="imagme/mulher_de_vestido.png" alt="Mulher elegante a usar perfume"
+                            class="rounded-lg shadow-xl w-full h-auto object-cover bg-stone-100 border border-stone-200"
+                            onerror="this.style.background='#fbb6ce';this.style.border='2px solid #e53e3e';this.alt='Imagem não encontrada';">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-display mb-4">A Arte da Perfumaria</h2>
+                        <p class="text-stone-600 mb-4 leading-relaxed">Na Aura, acreditamos que um perfume é mais do que
+                            uma fragrância; é uma forma de arte, uma expressão da identidade. Nascemos da paixão por
+                            criar aromas únicos que evocam emoções e memórias.</p>
+                        <p class="text-stone-600 mb-6 leading-relaxed">Cada frasco é o resultado de uma busca incansável
+                            pelos melhores ingredientes e da mestria dos nossos perfumistas, dedicados a traduzir
+                            sentimentos em notas olfativas.</p>
+                        <a href="#" class="font-bold text-rose-500 hover:text-rose-600 transition duration-300">Saber
+                            mais sobre a nossa história →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Testemunhos -->
+        <section class="py-20 bg-rose-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-display text-center mb-12">O que os Nossos Clientes Dizem</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <p class="text-stone-600 mb-4">"O perfume 'Noir' tornou-se a minha assinatura. É sofisticado e
+                            dura o dia todo. A entrega foi surpreendentemente rápida!"</p>
+                        <div class="flex items-center">
+                            <img src="https://i.pravatar.cc/50?img=1" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Ana Costa</p>
+                                <p class="text-sm text-stone-500">Cliente Verificada</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <p class="text-stone-600 mb-4">"Estava à procura de um presente especial e encontrei o 'Fleur'.
+                            A minha namorada adorou! A embalagem é linda e o cheiro é divino."</p>
+                        <div class="flex items-center">
+                            <img src="https://i.pravatar.cc/50?img=4" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Miguel Ferreira</p>
+                                <p class="text-sm text-stone-500">Cliente Verificado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="bg-stone-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Sobre a Loja -->
+                <div>
+                    <h3 class="text-xl font-display font-bold mb-4">Aura</h3>
+                    <p class="text-stone-400">Criando essências que definem momentos e celebram a individualidade.</p>
+                </div>
+                <!-- Links Rápidos -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Navegação</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-stone-400 hover:text-white transition">Início</a></li>
+                        <li><a href="perfume.html" class="text-stone-400 hover:text-white transition">Perfumes</a></li>
+                        <li><a href="#sobre" class="text-stone-400 hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#" class="text-stone-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Contato -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contato</h3>
+                    <ul class="space-y-2 text-stone-400">
+                        <li class="flex items-center"><i data-feather="map-pin" class="w-4 h-4 mr-2"></i> Brasília,
+                            Brasil</li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Newsletter</h3>
+                    <p class="text-stone-400 mb-4">Receba novidades e ofertas exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="O seu email"
+                            class="w-full bg-stone-800 text-white px-4 py-2 rounded-l-md focus:outline-none">
+                        <button type="submit"
+                            class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-r-md transition">Subscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-t border-stone-800 pt-8 mt-8 flex flex-col sm:flex-row justify-between items-center text-center">
+                <p class="text-stone-500 text-sm">&copy; 2024 Aura Perfumes. Todos os direitos reservados.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="text-stone-500 hover:text-white"><i data-feather="instagram"></i></a>
+                    <a href="#" class="text-stone-500 hover:text-white"><i data-feather="facebook"></i></a>
+                    <a href="#" class="text-stone-500 hover:text-white"><i data-feather="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/teste.js"></script>
+
+</body>
+
+</html>

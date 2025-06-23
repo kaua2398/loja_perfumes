@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Océan - Detalhes do Perfume | Aura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-display font-bold text-stone-900">Aura</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="perfume.html" class="text-stone-600 hover:text-stone-900 transition duration-300">Todos os
+                    Perfumes</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="favoritos.html" class="text-stone-600 hover:text-rose-500 relative"
+                    aria-label="Ir para Favoritos">
+                    <i data-feather="heart"></i>
+                    <span id="fav-badge"
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+                <a href="carrinho.html" class="text-stone-600 hover:text-stone-900 relative"
+                    aria-label="Ir para o carrinho">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-badge"
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="md:hidden bg-white px-6 pb-4">
+            <a href="perfume.html" class="block py-2 text-stone-600 hover:text-stone-900">Todos os Perfumes</a>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12">
+        <img src="imagme/ocean.png" alt="Perfume Océan" class="w-80 h-auto rounded-lg shadow-lg">
+        <div class="flex-1">
+            <h1 class="text-4xl font-display font-bold mb-2">Océan</h1>
+            <span class="inline-block bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm mb-4">Cítrico &
+                Refrescante</span>
+            <p class="text-lg mb-6">Océan é uma fragrância vibrante e refrescante, inspirada na brisa do mar. Suas notas
+                cítricas se unem a um fundo aquático e amadeirado, proporcionando uma sensação de liberdade e energia.
+                Ideal para dias quentes e para quem busca leveza.</p>
+            <ul class="mb-6 text-stone-700 list-disc list-inside">
+                <li>Notas de topo: Limão Siciliano, Laranja</li>
+                <li>Notas de coração: Notas Aquáticas, Lavanda</li>
+                <li>Notas de fundo: Cedro, Almíscar</li>
+            </ul>
+            <span class="text-2xl font-bold text-rose-500 block mb-4">R$ 79,90</span>
+            <div class="flex gap-4 mb-6">
+                <button id="add-to-cart"
+                    class="bg-stone-800 text-white py-2 px-6 rounded-md hover:bg-stone-900 transition flex items-center gap-2">
+                    <i data-feather="shopping-cart"></i> Adicionar ao Carrinho
+                </button>
+                <button id="add-to-fav"
+                    class="bg-rose-100 text-rose-600 py-2 px-6 rounded-md hover:bg-rose-200 transition flex items-center gap-2">
+                    <i data-feather="heart"></i> Favoritar
+                </button>
+            </div>
+            <a href="index.html"
+                class="inline-block bg-stone-800 text-white py-3 px-8 rounded-md hover:bg-stone-900 transition duration-300">Voltar
+                para a loja</a>
+        </div>
+    </main>
+    <script src="js/ocean.js"></script>
+</body>
+
+</html>

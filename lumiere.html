@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière - Detalhes do Perfume | Aura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-display font-bold text-stone-900">Aura</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="perfume.html" class="text-stone-600 hover:text-stone-900 transition duration-300">Todos os
+                    Perfumes</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="favoritos.html" class="text-stone-600 hover:text-rose-500 relative"
+                    aria-label="Ir para Favoritos">
+                    <i data-feather="heart"></i>
+                    <span id="fav-badge"
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+                <a href="carrinho.html" class="text-stone-600 hover:text-stone-900 relative"
+                    aria-label="Ir para o carrinho">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-badge"
+                        class="absolute -top-2 -right-2 bg-rose-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="md:hidden bg-white px-6 pb-4">
+            <a href="perfume.html" class="block py-2 text-stone-600 hover:text-stone-900">Todos os Perfumes</a>
+        </div>
+    </header>
+    <main class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12">
+        <img src="imagme/lumiere.png" alt="Perfume Lumière" class="w-80 h-auto rounded-lg shadow-lg">
+        <div class="flex-1">
+            <h1 class="text-4xl font-display font-bold mb-2">Lumière</h1>
+            <span class="inline-block bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm mb-4">Floral &
+                Radiante</span>
+            <p class="text-lg mb-6">Lumière é uma fragrância que celebra a luz e a feminilidade. Suas notas de saída
+                trazem um frescor cítrico envolvente, seguido por um buquê floral sofisticado de jasmim, rosa e
+                lírio-do-vale. O fundo ambarado e almiscarado garante uma fixação marcante e elegante, perfeita para
+                mulheres que querem deixar sua presença registrada por onde passam.</p>
+            <ul class="mb-6 text-stone-700 list-disc list-inside">
+                <li>Notas de topo: Bergamota, Mandarina</li>
+                <li>Notas de coração: Jasmim, Rosa, Lírio-do-vale</li>
+                <li>Notas de fundo: Âmbar, Almíscar</li>
+            </ul>
+            <span class="text-2xl font-bold text-rose-500 block mb-4">R$ 89,90</span>
+            <div class="flex gap-4 mb-6">
+                <button id="add-to-cart"
+                    class="bg-stone-800 text-white py-2 px-6 rounded-md hover:bg-stone-900 transition flex items-center gap-2">
+                    <i data-feather="shopping-cart"></i> Adicionar ao Carrinho
+                </button>
+                <button id="add-to-fav"
+                    class="bg-rose-100 text-rose-600 py-2 px-6 rounded-md hover:bg-rose-200 transition flex items-center gap-2">
+                    <i data-feather="heart"></i> Favoritar
+                </button>
+            </div>
+            <a href="index.html"
+                class="inline-block bg-stone-800 text-white py-3 px-8 rounded-md hover:bg-stone-900 transition duration-300">Voltar
+                para a loja</a>
+        </div>
+    </main>
+    <script>
+        feather.replace();
+
+        // Atualiza o badge do carrinho
+        function updateCartBadge() {
+            let cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+            const total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                if (total > 0) {
+                    badge.textContent = total;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+        }
+        // Atualiza o badge de favoritos
+        function updateFavBadge() {
+            let favs = JSON.parse(localStorage.getItem('auraFavorites')) || [];
+            const badge = document.getElementById('fav-badge');
+            if (badge) {
+                if (favs.length > 0) {
+                    badge.textContent = favs.length;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+        }
+        // Função para adicionar ao carrinho
+        function addToCart() {
+            let cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+            const product = { id: 1, name: 'Lumière', price: 89.90, image: 'imagme/lumiere.png', quantity: 1 };
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push(product);
+            }
+            localStorage.setItem('auraCart', JSON.stringify(cart));
+            updateCartBadge();
+        }
+        // Função para adicionar aos favoritos
+        function addToFav() {
+            let favs = JSON.parse(localStorage.getItem('auraFavorites')) || [];
+            const product = { id: 1, name: 'Lumière', price: 89.90, image: 'imagme/lumiere.png' };
+            if (!favs.some(item => item.id === product.id)) {
+                favs.push(product);
+                localStorage.setItem('auraFavorites', JSON.stringify(favs));
+                updateFavBadge();
+            } else {
+                alert('Já está nos favoritos!');
+            }
+        }
+        document.getElementById('add-to-cart').onclick = addToCart;
+        document.getElementById('add-to-fav').onclick = addToFav;
+        // Atualiza badges ao carregar a página
+        updateCartBadge();
+        updateFavBadge();
+    </script>
+    <script src="js/lumiere.js"></script>
+</body>
+
+</html>
